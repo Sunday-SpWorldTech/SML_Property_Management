@@ -1,19 +1,259 @@
 <!DOCTYPE html>
-<html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>Home</title><link rel='stylesheet' href='css/style.css'></head>
-<body>
-<header><nav><h2>FEMCO</h2><ul>
-<li><a href='index.html'>Home</a></li>
-<li><a href='about.html'>About</a></li>
-<li><a href='services.html'>Services</a></li>
-<li><a href='contact.html'>Contact</a></li>
-</ul></nav></header>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>FEMCO Real Estate</title>
 
-<section class='hero'><div><h1>FEMCO Real Estate Management</h1><p>Premium Property & Facility Management</p><br><a class='btn' href='services.html'>Explore Services</a></div></section>
-<div class='container'><h2>Featured Services</h2><div class='cards'>
-<div class='card'><h3>Property Sales</h3><p>Buy and sell premium properties.</p></div>
-<div class='card'><h3>Property Leasing</h3><p>Residential and commercial leasing.</p></div>
-<div class='card'><h3>Facility Management</h3><p>Professional maintenance solutions.</p></div>
-</div></div>
-<footer><p>© 2026 FEMCO Real Estate Management | info@femcorealestate.com</p></footer>
-<script src='js/script.js'></script></body></html>
+<style>
+body {font-family: Arial; margin:0; background:#f5f5f5;}
+header {background:#111; color:#fff; padding:15px;}
+nav {display:flex; justify-content:space-between; align-items:center;}
+nav ul {list-style:none; display:flex; gap:15px;}
+nav a {color:#fff; text-decoration:none;}
+
+.hero {
+background:#222; color:white; padding:60px; text-align:center;
+}
+
+.container {padding:20px;}
+.cards {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px;}
+
+.card {
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.btn {
+display:inline-block;
+margin-top:10px;
+padding:10px 15px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.hidden {display:none;}
+
+.gallery {
+width:100%;
+max-width:500px;
+margin:auto;
+text-align:center;
+}
+
+.gallery img {
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.gallery-controls {
+margin-top:10px;
+display:flex;
+justify-content:space-between;
+}
+
+footer {text-align:center; padding:20px; background:#111; color:white;}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<h2>FEMCO</h2>
+<ul>
+<li><a href="#" onclick="showHome()">Home</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- HOME -->
+<div id="home">
+
+<section class="hero">
+<h1>FEMCO Real Estate Management</h1>
+<p>Premium Property & Facility Management</p>
+</section>
+
+<div class="container">
+<h2>Available Properties</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Modern 4-Bedroom Duplex</h3>
+<p>₦85,000,000</p>
+<button class="btn" onclick="showHouse('h1')">View Details</button>
+</div>
+
+<div class="card">
+<h3>3-Bedroom Bungalow</h3>
+<p>₦45,000,000</p>
+<button class="btn" onclick="showHouse('h2')">View Details</button>
+</div>
+
+<div class="card">
+<h3>Mini Flat Apartment</h3>
+<p>₦18,000,000</p>
+<button class="btn" onclick="showHouse('h3')">View Details</button>
+</div>
+
+<div class="card">
+<h3>Luxury Penthouse</h3>
+<p>₦120,000,000</p>
+<button class="btn" onclick="showHouse('h4')">View Details</button>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- ================= HOUSE 1 ================= -->
+<div id="h1" class="hidden container">
+<h2>Modern 4-Bedroom Duplex</h2>
+<p><strong>Price:</strong> ₦85,000,000</p>
+
+<div class="gallery">
+<img id="img-h1" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" />
+
+<div class="gallery-controls">
+<button class="btn" onclick="prevImg('h1')">⬅ Prev</button>
+<button class="btn" onclick="nextImg('h1')">Next ➡</button>
+</div>
+</div>
+
+<p>Luxury duplex with modern finishing and gated security.</p>
+<button class="btn" onclick="showHome()">Back</button>
+</div>
+
+<!-- ================= HOUSE 2 ================= -->
+<div id="h2" class="hidden container">
+<h2>3-Bedroom Bungalow</h2>
+<p><strong>Price:</strong> ₦45,000,000</p>
+
+<div class="gallery">
+<img id="img-h2" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" />
+
+<div class="gallery-controls">
+<button class="btn" onclick="prevImg('h2')">⬅ Prev</button>
+<button class="btn" onclick="nextImg('h2')">Next ➡</button>
+</div>
+</div>
+
+<p>Comfortable family bungalow in secure estate.</p>
+<button class="btn" onclick="showHome()">Back</button>
+</div>
+
+<!-- ================= HOUSE 3 ================= -->
+<div id="h3" class="hidden container">
+<h2>Mini Flat Apartment</h2>
+<p><strong>Price:</strong> ₦18,000,000</p>
+
+<div class="gallery">
+<img id="img-h3" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688" />
+
+<div class="gallery-controls">
+<button class="btn" onclick="prevImg('h3')">⬅ Prev</button>
+<button class="btn" onclick="nextImg('h3')">Next ➡</button>
+</div>
+</div>
+
+<p>Affordable modern city apartment.</p>
+<button class="btn" onclick="showHome()">Back</button>
+</div>
+
+<!-- ================= HOUSE 4 ================= -->
+<div id="h4" class="hidden container">
+<h2>Luxury Penthouse</h2>
+<p><strong>Price:</strong> ₦120,000,000</p>
+
+<div class="gallery">
+<img id="img-h4" src="https://images.unsplash.com/photo-1501183638710-841dd1904471" />
+
+<div class="gallery-controls">
+<button class="btn" onclick="prevImg('h4')">⬅ Prev</button>
+<button class="btn" onclick="nextImg('h4')">Next ➡</button>
+</div>
+</div>
+
+<p>High-rise luxury apartment with city view.</p>
+<button class="btn" onclick="showHome()">Back</button>
+</div>
+
+<footer>
+<p>© 2026 FEMCO Real Estate Management</p>
+</footer>
+
+
+<script>
+// IMAGE GALLERIES (multiple images per house)
+const images = {
+h1: [
+"https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+"https://images.unsplash.com/photo-1564013799919-ab600027ffc6"
+],
+h2: [
+"https://images.unsplash.com/photo-1570129477492-45c003edd2be",
+"https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
+"https://images.unsplash.com/photo-1613977257363-707ba9348227"
+],
+h3: [
+"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+"https://images.unsplash.com/photo-1493809842364-78817add7ffb"
+],
+h4: [
+"https://images.unsplash.com/photo-1501183638710-841dd1904471",
+"https://images.unsplash.com/photo-1484154218962-a197022b5858",
+"https://images.unsplash.com/photo-1494526585095-c41746248156"
+]
+
+};
+
+const indexMap = {
+h1:0,h2:0,h3:0,h4:0
+};
+
+function showHouse(id){
+document.getElementById('home').style.display='none';
+document.querySelectorAll('.container').forEach(c=>{
+if(c.id && c.id.startsWith('h')) c.style.display='none';
+});
+document.getElementById(id).style.display='block';
+}
+
+function showHome(){
+document.getElementById('home').style.display='block';
+document.querySelectorAll('.container').forEach(c=>{
+if(c.id && c.id.startsWith('h')) c.style.display='none';
+});
+}
+
+function updateImg(id){
+document.getElementById('img-'+id).src =
+images[id][indexMap[id]];
+}
+
+function nextImg(id){
+indexMap[id] = (indexMap[id] + 1) % images[id].length;
+updateImg(id);
+}
+
+function prevImg(id){
+indexMap[id] =
+(indexMap[id] - 1 + images[id].length) % images[id].length;
+updateImg(id);
+}
+</script>
+
+</body>
+</html>
