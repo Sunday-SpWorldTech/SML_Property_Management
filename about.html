@@ -28,8 +28,59 @@ body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--
 
 header { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 nav { display: flex; justify-content: space-between; align-items: center; max-width: 1280px; margin: 0 auto; padding: 18px 24px; }
-.logo { color: #fff; font-weight: 700; font-size: 1.5rem; display: flex; align-items: center; gap: 8px; }
-.logo span { color: var(--primary); }
+
+/* MATCHING PROFESSIONAL LOGO STYLING */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-mark {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--primary) 0%, #004488 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.logo-mark::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  transform: rotate(45deg);
+  top: 12px;
+}
+
+.logo-mark::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  bottom: 8px;
+  border-radius: 1px;
+}
+
+.logo-text {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+}
+
+.logo-text span {
+  color: var(--primary);
+}
+
 nav ul { list-style: none; display: flex; gap: 24px; }
 nav a { color: #94a3b8; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
 nav a:hover, nav a.active { color: #fff; }
@@ -100,7 +151,10 @@ footer { background: #0f172a; color: #64748b; padding: 60px 24px 30px 24px; bord
 
 <header>
   <nav>
-    <div class="logo"><i class="fa-solid fa-building-shield"></i>SML Property<span>.</span></div>
+    <a href="index.html" class="logo-container">
+      <div class="logo-mark"></div>
+      <div class="logo-text">SML Property<span>.</span></div>
+    </a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About Us</a></li>
@@ -219,7 +273,10 @@ footer { background: #0f172a; color: #64748b; padding: 60px 24px 30px 24px; bord
 <footer>
   <div class="footer-grid">
     <div class="footer-col">
-      <div class="logo" style="margin-bottom:20px;"><i class="fa-solid fa-building-shield"></i>SML Property<span>.</span></div>
+      <a href="index.html" class="logo-container" style="margin-bottom:20px;">
+        <div class="logo-mark"></div>
+        <div class="logo-text">SML Property<span>.</span></div>
+      </a>
       <p style="font-size:0.9rem; line-height:1.8;">Enterprise-grade real estate management systems securing luxury portfolios, minimizing architectural operational risks, and maximizing long-term asset appreciation loops across institutional fields.</p>
     </div>
     <div class="footer-col">

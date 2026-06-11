@@ -54,17 +54,57 @@ nav {
   padding: 18px 24px;
 }
 
-.logo {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: -0.5px;
+/* MATCHING PROFESSIONAL LOGO STYLING */
+.logo-container {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  text-decoration: none;
 }
 
-.logo span { color: var(--primary); }
+.logo-mark {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--primary) 0%, #004488 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.logo-mark::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  transform: rotate(45deg);
+  top: 12px;
+}
+
+.logo-mark::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  bottom: 8px;
+  border-radius: 1px;
+}
+
+.logo-text {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+}
+
+.logo-text span {
+  color: var(--primary);
+}
 
 nav ul { list-style: none; display: flex; gap: 24px; }
 nav a {
@@ -339,7 +379,7 @@ nav a:hover, nav a.active { color: #fff; }
 }
 .btn-secondary:hover { background: #e2e8f0; }
 
-.hidden { display: none; }
+.hidden { display: none !important; }
 
 /* Testimonials Layout Grid */
 .testimonials-section {
@@ -404,11 +444,20 @@ nav a:hover, nav a.active { color: #fff; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  user-select: none;
 }
 
 .faq-answer {
-  padding: 0 25px 20px 25px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 25px;
   color: var(--text-main);
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 25px 20px 25px;
 }
 
 /* Detail View Layout Frameworks */
@@ -567,7 +616,10 @@ footer {
 
 <header>
   <nav>
-    <div class="logo"><i class="fa-solid fa-building-shield"></i>SML Property<span>.</span></div>
+    <a href="index.html" class="logo-container">
+      <div class="logo-mark"></div>
+      <div class="logo-text">SML Property<span>.</span></div>
+    </a>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About Us</a></li>
@@ -997,7 +1049,10 @@ footer {
 <footer>
   <div class="footer-grid">
     <div class="footer-col">
-      <div class="logo" style="margin-bottom:20px;"><i class="fa-solid fa-building-shield"></i>SML Property<span>.</span></div>
+      <a href="index.html" class="logo-container" style="margin-bottom:20px;">
+        <div class="logo-mark"></div>
+        <div class="logo-text">SML Property<span>.</span></div>
+      </a>
       <p style="font-size:0.9rem; line-height:1.8;">Enterprise-grade real estate management systems securing luxury portfolios, minimizing architectural operational risks, and maximizing long-term asset appreciation loops across institutional fields.</p>
     </div>
     <div class="footer-col">
@@ -1126,15 +1181,15 @@ function initDetailsHTML() {
 }
 
 function showHouse(id) {
-  document.getElementById('home').style.display = 'none';
-  document.querySelectorAll('#property-details-container .container').forEach(c => c.style.display = 'none');
-  document.getElementById(id).style.display = 'block';
+  document.getElementById('home').classList.add('hidden');
+  document.querySelectorAll('#property-details-container .container').forEach(c => c.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
   window.scrollTo(0, 0);
 }
 
 function showHome() {
-  document.getElementById('home').style.display = 'block';
-  document.querySelectorAll('#property-details-container .container').forEach(c => c.style.display = 'none');
+  document.getElementById('home').classList.remove('hidden');
+  document.querySelectorAll('#property-details-container .container').forEach(c => c.classList.add('hidden'));
   window.scrollTo(0, 0);
 }
 
@@ -1152,16 +1207,24 @@ function prevImg(id) {
   updateImg(id);
 }
 
-// Accordion UI Logic
+// Modern Accordion UI Logic with smooth transitions
 document.querySelectorAll('.faq-question').forEach(q => {
   q.addEventListener('click', () => {
     const icon = q.querySelector('i');
-    const answer = q.nextElementSibling;
-    if(answer.style.display === 'block') {
-      answer.style.display = 'none';
+    const item = q.parentElement;
+    
+    if(item.classList.contains('active')) {
+      item.classList.remove('active');
       icon.className = 'fa-solid fa-plus';
     } else {
-      answer.style.display = 'block';
+      // Close other items if open
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('active');
+        const activeIcon = i.querySelector('.faq-question i');
+        if(activeIcon) activeIcon.className = 'fa-solid fa-plus';
+      });
+      
+      item.classList.add('active');
       icon.className = 'fa-solid fa-minus';
     }
   });
@@ -1169,7 +1232,6 @@ document.querySelectorAll('.faq-question').forEach(q => {
 
 // Structural initialization
 initDetailsHTML();
-document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
 </script>
 </body>
 </html>
