@@ -3,7 +3,7 @@
 <head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>FEMCO Real Estate | Premium Property & Facility Management</title>
+<title>SML Property Management | Premium Property & Facility Management</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,7 +76,7 @@ nav a {
 }
 nav a:hover, nav a.active { color: #fff; }
 
-/* Enhanced Hero Section with Alpha PNG/SVG Vector Blueprint Elements */
+/* Enhanced Hero Section */
 .hero {
   position: relative;
   background: radial-gradient(circle at 80% 50%, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 1) 100%),
@@ -84,7 +84,7 @@ nav a:hover, nav a.active { color: #fff; }
   background-size: cover;
   background-position: center;
   color: white;
-  padding: 100px 24px;
+  padding: 120px 24px;
   text-align: left;
   overflow: hidden;
 }
@@ -99,7 +99,7 @@ nav a:hover, nav a.active { color: #fff; }
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -107,13 +107,12 @@ nav a:hover, nav a.active { color: #fff; }
 }
 
 .hero-text p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #94a3b8;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   max-width: 540px;
 }
 
-/* Floating Luxury House UI PNG Graphics Component */
 .hero-graphic {
   position: relative;
   display: flex;
@@ -147,18 +146,18 @@ nav a:hover, nav a.active { color: #fff; }
   z-index: 1;
 }
 
-/* Property Container Setup */
+/* Structural Layout Components */
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 80px 24px;
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: var(--dark);
-  margin-bottom: 35px;
+  margin-bottom: 15px;
   position: relative;
   display: inline-block;
 }
@@ -174,14 +173,54 @@ nav a:hover, nav a.active { color: #fff; }
   border-radius: 2px;
 }
 
-/* Rigid Professional Grid Layout Setup: Exactly 4 Items Per Row */
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 50px;
+  max-width: 700px;
+}
+
+/* Feature Grid Columns */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.feature-box {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.feature-box h3 {
+  font-size: 1.35rem;
+  color: var(--dark);
+  margin-bottom: 15px;
+}
+
+/* Property Grid Layout: 4 Items Per Row */
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
-/* Professional Architecture Card Design */
 .card {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -302,7 +341,77 @@ nav a:hover, nav a.active { color: #fff; }
 
 .hidden { display: none; }
 
-/* Modern Luxury Details View Showcase Layouts */
+/* Testimonials Layout Grid */
+.testimonials-section {
+  background: #0f172a;
+  color: #fff;
+  padding: 80px 24px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1280px;
+  margin: 40px auto 0 auto;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  padding: 35px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.client-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+/* FAQ Component Layout Styles */
+.faq-container {
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+}
+
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 20px 25px;
+  font-weight: 600;
+  color: var(--dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  padding: 0 25px 20px 25px;
+  color: var(--text-main);
+}
+
+/* Detail View Layout Frameworks */
 .details-grid {
   display: grid;
   grid-template-columns: 7fr 5fr;
@@ -402,28 +511,55 @@ nav a:hover, nav a.active { color: #fff; }
 }
 
 footer {
-  text-align: center;
-  padding: 30px 24px;
-  background: var(--dark);
+  background: #0f172a;
   color: #64748b;
+  padding: 60px 24px 30px 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 40px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.footer-col h4 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #94a3b8; text-decoration: none; transition: var(--transition); }
+.footer-col ul li a:hover { color: #fff; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 30px;
+  text-align: center;
   font-size: 0.9rem;
 }
 
-/* Structural Layout Breaks for Responsive Elements */
+/* Responsive Structural Breaks */
 @media (max-width: 1100px) {
   .cards { grid-template-columns: repeat(3, 1fr); }
-  .hero-text h1 { font-size: 2.5rem; }
+  .features-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 900px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
+  .cards, .features-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-container { grid-template-columns: 1fr; text-align: center; }
   .hero-text p { margin-left: auto; margin-right: auto; }
   .details-grid { grid-template-columns: 1fr; }
-  .gallery img { height: 350px; }
 }
-@media (max-width: 550px) {
-  .cards { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+  .cards, .features-grid, .testimonials-grid, .footer-grid { grid-template-columns: 1fr; }
+  nav { flex-direction: column; gap: 15px; }
 }
 </style>
 </head>
@@ -431,9 +567,12 @@ footer {
 
 <header>
   <nav>
-    <div class="logo"><i class="fa-solid fa-building-shield"></i>FEMCO<span>.</span></div>
+    <div class="logo"><i class="fa-solid fa-building-shield"></i>SML Property<span>.</span></div>
     <ul>
-      <li><a href="#" class="active" onclick="showHome()">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -444,6 +583,7 @@ footer {
       <div class="hero-text">
         <h1>Premium Property & Facility Management</h1>
         <p>Discover luxury residential properties curated across prime locations with world-class architecture and modern automation.</p>
+        <a href="contact.html" class="btn" style="width: auto; padding: 15px 30px; display: inline-flex;">Schedule Structural Review</a>
       </div>
       <div class="hero-graphic">
         <div class="hero-bg-glow"></div>
@@ -453,9 +593,30 @@ footer {
   </section>
 
   <div class="container">
-    <h2 class="section-title">Available Premium Properties</h2>
-    <div class="cards">
+    <h2 class="section-title">Why SML Management Excels</h2>
+    <p class="section-subtitle">We merge rigorous operational control structures with luxury real estate hospitality, serving elite investors globally.</p>
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Asset Value Maximization</h3>
+        <p>Through systematic preventive maintenance schedules, structural lifecycle modeling, and vendor oversight matrix execution, we protect long-term capital yields.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+        <h3>Transparent Financial Reporting</h3>
+        <p>Real-time accounting ledger portals tracking monthly cashflows, comprehensive balance statements, automated invoicing, and legal corporate distributions.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
+        <h3>Rigorous Tenant Underwriting</h3>
+        <p>Advanced screening algorithms examining multi-jurisdictional records, debt-to-income liquidity ratios, structural background reports, and verified histories.</p>
+      </div>
+    </div>
 
+    <h2 class="section-title">Available Premium Properties</h2>
+    <p class="section-subtitle">Browse through our active portfolio of verified residential and commercial assets available across prime metropolitan zones.</p>
+    
+    <div class="cards">
       <div class="card">
         <div class="card-img-wrapper">
           <span class="card-badge">For Sale</span>
@@ -559,7 +720,7 @@ footer {
           <button class="btn" onclick="showHouse('h8')">View Details <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
-
+      
       <div class="card">
         <div class="card-img-wrapper">
           <span class="card-badge">Smart Home</span>
@@ -767,121 +928,132 @@ footer {
           <button class="btn" onclick="showHouse('h24')">View Details <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
+    </div>
+  </div>
 
+  <section class="testimonials-section">
+    <div class="container" style="padding-top:0; padding-bottom:0;">
+      <h2 class="section-title" style="color: #fff;">Institutional Endorsements</h2>
+      <p class="section-subtitle" style="color: #94a3b8;">Read verified accounts from institutional fund managers, long-term luxury lessors, and real estate asset partners.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"SML Property Management optimized our Class-A luxury portfolios within months. Their preventive maintenance programs decreased operational expenditure metrics significantly."</p>
+          <div class="client-info">
+            <div class="client-avatar" style="background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&q=80') center/cover;"></div>
+            <div>
+              <h4>Marcus Vance</h4>
+              <span style="font-size:0.8rem; color:#64748b;">Managing Director, Vanguard Trust</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p>"The single-point contact ledger system gives our family offices full transparency over luxury assets distributed across various geographical locations."</p>
+          <div class="client-info">
+            <div class="client-avatar" style="background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80') center/cover;"></div>
+            <div>
+              <h4>Elena Rostova</h4>
+              <span style="font-size:0.8rem; color:#64748b;">Asset Allocation Lead, Rostova Capital</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Their background check frameworks are elite. Tenant retention rates have reached historical peaks, ensuring predictable monthly dividend yields."</p>
+          <div class="client-info">
+            <div class="client-avatar" style="background: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=100&q=80') center/cover;"></div>
+            <div>
+              <h4>Jonathan Wright</h4>
+              <span style="font-size:0.8rem; color:#64748b;">Principal General Partner, Nexus Realty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div style="text-align: center;">
+      <h2 class="section-title">Frequently Asked Structural Questions</h2>
+      <p class="section-subtitle" style="margin-left:auto; margin-right:auto;">Clarifying operations, emergency engineering response, escrow allocations, and tenant mitigation frameworks.</p>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">How does SML calculate monthly management operational allocations? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Our corporate fee structures scale directly with property classifications, volume arrays, and required site parameters. Standard structural assignments range between 6% to 10% of gross receipts, documented cleanly via real-time owner ledgers.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What emergency systems are deployed for overnight repair notifications? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">SML maintains active 24/7 localized engineering teams ready to handle structural breakdowns, electrical grid faults, high-volume plumbing failures, and HVAC architectural overhauls instantly upon algorithmic detection.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Are international investor accounts fully integrated with regulatory guidelines? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-answer">Yes, our digital banking infrastructure supports multi-currency conversion layers, cross-border corporate distribution pipelines, institutional escrow handling, and compliance forms tracking.</div>
+      </div>
     </div>
   </div>
 </div>
 
-<div id="property-details-container">
-  </div>
+<div id="property-details-container"></div>
 
 <footer>
-  <p>&copy; 2026 FEMCO Real Estate Management. All Rights Reserved.</p>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="logo" style="margin-bottom:20px;"><i class="fa-solid fa-building-shield"></i>SML Property<span>.</span></div>
+      <p style="font-size:0.9rem; line-height:1.8;">Enterprise-grade real estate management systems securing luxury portfolios, minimizing architectural operational risks, and maximizing long-term asset appreciation loops across institutional fields.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Our Portfolio Areas</h4>
+      <ul>
+        <li><a href="services.html">Residential Core</a></li>
+        <li><a href="services.html">Commercial Logistics</a></li>
+        <li><a href="services.html">Industrial Facilities</a></li>
+        <li><a href="services.html">Smart Penthouse Assortments</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Corporate Systems</h4>
+      <ul>
+        <li><a href="about.html">Executive Team</a></li>
+        <li><a href="services.html">Asset Engineering</a></li>
+        <li><a href="contact.html">Escrow Verification</a></li>
+        <li><a href="about.html">Regulatory Compliance</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Corporate Headquarters</h4>
+      <p style="font-size:0.9rem; color:#94a3b8; line-height:1.8;">800 North Orange Ave,<br>Orlando, FL 32801<br>Email: assetops@sml-management.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 SML Property Management Services. All Asset Classes Fully Protected. Built to Highest Engineering Code Specifications.</p>
+  </div>
 </footer>
 
 <script>
-// ALL SEPARATE HIGH RESOLUTION IMAGES MAPPED EXCLUSIVELY PER HOUSE INDEX
 const images = {
-  h1: [
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80"
-  ],
-  h2: [
-    "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80"
-  ],
-  h3: [
-    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80"
-  ],
-  h4: [
-    "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80"
-  ],
-  h5: [
-    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=800&q=80"
-  ],
-  h6: [
-    "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1502672016832-3f11204859ce?auto=format&fit=crop&w=800&q=80"
-  ],
-  h7: [
-    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
-  ],
-  h8: [
-    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
-  ],
-  h9: [
-    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80"
-  ],
-  h10: [
-    "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80"
-  ],
-  h11: [
-    "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80"
-  ],
-  h12: [
-    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
-  ],
-  h13: [
-    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
-  ],
-  h14: [
-    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80"
-  ],
-  h15: [
-    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
-  ],
-  h16: [
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80"
-  ],
-  h17: [
-    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80"
-  ],
-  h18: [
-    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80"
-  ],
-  h19: [
-    "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?auto=format&fit=crop&w=800&q=80"
-  ],
-  h20: [
-    "https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
-  ],
-  h21: [
-    "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&q=80"
-  ],
-  h22: [
-    "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80"
-  ],
-  h23: [
-    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
-  ],
-  h24: [
-    "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
-  ]
+  h1: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"],
+  h2: ["https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=800&q=80"],
+  h3: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80"],
+  h4: ["https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80"],
+  h5: ["https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=800&q=80"],
+  h6: ["https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1502672016832-3f11204859ce?auto=format&fit=crop&w=800&q=80"],
+  h7: ["https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"],
+  h8: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"],
+  h9: ["https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80"],
+  h10: ["https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80"],
+  h11: ["https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80"],
+  h12: ["https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"],
+  h13: ["https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"],
+  h14: ["https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80"],
+  h15: ["https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"],
+  h16: ["https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80"],
+  h17: ["https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80"],
+  h18: ["https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80"],
+  h19: ["https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?auto=format&fit=crop&w=800&q=80"],
+  h20: ["https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"],
+  h21: ["https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&q=80"],
+  h22: ["https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80"],
+  h23: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"],
+  h24: ["https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"]
 };
 
 const houseData = {
@@ -913,7 +1085,6 @@ const houseData = {
 
 const indexMap = {};
 
-// Build detail markup structurally clean inside runtime memory engine
 function initDetailsHTML() {
   const container = document.getElementById('property-details-container');
   let html = '';
@@ -930,7 +1101,7 @@ function initDetailsHTML() {
             <img id="img-${id}" src="${images[id][0]}" alt="${data.title}">
             <div class="gallery-controls">
               <button class="btn-circle" onclick="prevImg('${id}')"><i class="fa-solid fa-chevron-left"></i></button>
-              <button class="btn-circle" onclick="prevImg('${id}')"><i class="fa-solid fa-chevron-right"></i></button>
+              <button class="btn-circle" onclick="nextImg('${id}')"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
           </div>
           <div class="details-sidebar">
@@ -940,12 +1111,12 @@ function initDetailsHTML() {
             <div class="specs-list">
               <div class="specs-item"><i class="fa-solid fa-bed" style="color:var(--primary)"></i> <strong>Bedrooms:</strong> ${data.beds}</div>
               <div class="specs-item"><i class="fa-solid fa-bath" style="color:var(--primary)"></i> <strong>Bathrooms:</strong> ${data.baths}</div>
-              <div class="specs-item"><i class="fa-solid fa-shield-halved" style="color:var(--primary)"></i> <strong>Security:</strong> Gated</div>
-              <div class="specs-item"><i class="fa-solid fa-bolt" style="color:var(--primary)"></i> <strong>Power:</strong> 24/7 Status</div>
+              <div class="specs-item"><i class="fa-solid fa-shield-halved" style="color:var(--primary)"></i> <strong>Security:</strong> Gated Matrix</div>
+              <div class="specs-item"><i class="fa-solid fa-bolt" style="color:var(--primary)"></i> <strong>Power:</strong> 24/7 Redundant</div>
             </div>
-            <button class="btn" onclick="alert('Inquiry successfully logged for ${data.title}. A FEMCO agent will contact you shortly.')">
+            <a href="contact.html" class="btn">
               <i class="fa-solid fa-envelope"></i> Book Inspection Appointment
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -958,14 +1129,12 @@ function showHouse(id) {
   document.getElementById('home').style.display = 'none';
   document.querySelectorAll('#property-details-container .container').forEach(c => c.style.display = 'none');
   document.getElementById(id).style.display = 'block';
-  document.querySelector('nav ul a').classList.remove('active');
   window.scrollTo(0, 0);
 }
 
 function showHome() {
   document.getElementById('home').style.display = 'block';
   document.querySelectorAll('#property-details-container .container').forEach(c => c.style.display = 'none');
-  document.querySelector('nav ul a').classList.add('active');
   window.scrollTo(0, 0);
 }
 
@@ -983,9 +1152,24 @@ function prevImg(id) {
   updateImg(id);
 }
 
-// Instantiate view layer arrays seamlessly
-initDetailsHTML();
-</script>
+// Accordion UI Logic
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const icon = q.querySelector('i');
+    const answer = q.nextElementSibling;
+    if(answer.style.display === 'block') {
+      answer.style.display = 'none';
+      icon.className = 'fa-solid fa-plus';
+    } else {
+      answer.style.display = 'block';
+      icon.className = 'fa-solid fa-minus';
+    }
+  });
+});
 
+// Structural initialization
+initDetailsHTML();
+document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+</script>
 </body>
 </html>
