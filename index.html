@@ -1,258 +1,990 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>FEMCO Real Estate</title>
+<title>FEMCO Real Estate | Premium Property & Facility Management</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-body {font-family: Arial; margin:0; background:#f5f5f5;}
-header {background:#111; color:#fff; padding:15px;}
-nav {display:flex; justify-content:space-between; align-items:center;}
-nav ul {list-style:none; display:flex; gap:15px;}
-nav a {color:#fff; text-decoration:none;}
-
-.hero {
-background:#222; color:white; padding:60px; text-align:center;
+:root {
+  --primary: #0066cc;
+  --primary-hover: #0052a3;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --text-main: #334155;
+  --text-muted: #64748b;
+  --card-bg: #ffffff;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.container {padding:20px;}
-.cards {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px;}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--light);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 24px;
+}
+
+.logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo span { color: var(--primary); }
+
+nav ul { list-style: none; display: flex; gap: 24px; }
+nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+nav a:hover, nav a.active { color: #fff; }
+
+/* Enhanced Hero Section with Alpha PNG/SVG Vector Blueprint Elements */
+.hero {
+  position: relative;
+  background: radial-gradient(circle at 80% 50%, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 1) 100%),
+              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 24px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 30px;
+  max-width: 540px;
+}
+
+/* Perfect Isometric Floating Luxury House UI PNG Graphics Component */
+.hero-graphic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-png {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: drop-shadow(0 25px 50px rgba(0,0,0,0.5));
+  animation: float 6s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero-bg-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: var(--primary);
+  filter: blur(120px);
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Property Container Setup */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 35px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Rigid Professional Grid Layout Setup: Exactly 4 Items Per Row */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Professional Architecture Card Design */
 .card {
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
+}
+
+.card-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.card:hover .card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.card-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--dark);
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  height: 44px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card .price {
+  font-size: 1.25rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.card-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 15px;
+  margin-top: auto;
+}
+
+.card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .btn {
-display:inline-block;
-margin-top:10px;
-padding:10px 15px;
-background:#007bff;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  width: 100%;
+  margin-top: 15px;
 }
 
-.hidden {display:none;}
+.btn:hover { background: var(--primary-hover); }
+.btn-secondary {
+  background: #f1f5f9;
+  color: var(--dark);
+}
+.btn-secondary:hover { background: #e2e8f0; }
+
+.hidden { display: none; }
+
+/* Modern Luxury Details View Showcase Layouts */
+.details-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 40px;
+  align-items: start;
+}
 
 .gallery {
-width:100%;
-max-width:500px;
-margin:auto;
-text-align:center;
+  width: 100%;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
 .gallery img {
-width:100%;
-height:280px;
-object-fit:cover;
-border-radius:10px;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
 }
 
 .gallery-controls {
-margin-top:10px;
-display:flex;
-justify-content:space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  pointer-events: none;
 }
 
-footer {text-align:center; padding:20px; background:#111; color:white;}
+.gallery-controls .btn-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--dark);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  pointer-events: auto;
+}
+
+.gallery-controls .btn-circle:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+.details-sidebar {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.details-sidebar h2 {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.details-sidebar .price-tag {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.details-sidebar p {
+  color: var(--text-main);
+  margin-bottom: 25px;
+}
+
+.specs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+  background: var(--light);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.specs-item {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 24px;
+  background: var(--dark);
+  color: #64748b;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+}
+
+/* Structural Layout Breaks for Responsive Elements */
+@media (max-width: 1100px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  .hero-text h1 { font-size: 2.5rem; }
+}
+@media (max-width: 900px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .hero-container { grid-template-columns: 1fr; text-align: center; }
+  .hero-text p { margin-left: auto; margin-right: auto; }
+  .details-grid { grid-template-columns: 1fr; }
+  .gallery img { height: 350px; }
+}
+@media (max-width: 550px) {
+  .cards { grid-template-columns: 1fr; }
+}
 </style>
 </head>
-
 <body>
 
 <header>
-<nav>
-<h2>FEMCO</h2>
-<ul>
-<li><a href="#" onclick="showHome()">Home</a></li>
-</ul>
-</nav>
+  <nav>
+    <div class="logo"><i class="fa-solid fa-building-shield"></i>FEMCO<span>.</span></div>
+    <ul>
+      <li><a href="#" class="active" onclick="showHome()">Home</a></li>
+    </ul>
+  </nav>
 </header>
 
-<!-- HOME -->
 <div id="home">
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Premium Property & Facility Management</h1>
+        <p>Discover luxury residential properties curated across prime economic locations with world-class architecture and modern automation.</p>
+      </div>
+      <div class="hero-graphic">
+        <div class="hero-bg-glow"></div>
+        <img class="hero-png" src="https://i.imgur.com/v8p0E9b.png" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'" alt="Luxury Mansion Rendering">
+      </div>
+    </div>
+  </section>
 
-<section class="hero">
-<h1>FEMCO Real Estate Management</h1>
-<p>Premium Property & Facility Management</p>
-</section>
+  <div class="container">
+    <h2 class="section-title">Available Premium Properties</h2>
+    <div class="cards">
 
-<div class="container">
-<h2>Available Properties</h2>
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">For Sale</span>
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="House 1">
+        </div>
+        <div class="card-content">
+          <h3>Modern 4-Bedroom Duplex</h3>
+          <div class="price">₦85,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 4 Beds</span><span><i class="fa-solid fa-bath"></i> 4 Baths</span></div>
+          <button class="btn" onclick="showHouse('h1')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
 
-<div class="cards">
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">New Build</span>
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=400&q=80" alt="House 2">
+        </div>
+        <div class="card-content">
+          <h3>3-Bedroom Bungalow</h3>
+          <div class="price">₦45,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 3 Beds</span><span><i class="fa-solid fa-bath"></i> 3 Baths</span></div>
+          <button class="btn" onclick="showHouse('h2')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
 
-<div class="card">
-<h3>Modern 4-Bedroom Duplex</h3>
-<p>₦85,000,000</p>
-<button class="btn" onclick="showHouse('h1')">View Details</button>
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Popular</span>
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=400&q=80" alt="House 3">
+        </div>
+        <div class="card-content">
+          <h3>Mini Flat Apartment</h3>
+          <div class="price">₦18,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 1 Bed</span><span><i class="fa-solid fa-bath"></i> 1 Bath</span></div>
+          <button class="btn" onclick="showHouse('h3')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Luxury</span>
+          <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=400&q=80" alt="House 4">
+        </div>
+        <div class="card-content">
+          <h3>Luxury Penthouse</h3>
+          <div class="price">₦120,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 3 Beds</span><span><i class="fa-solid fa-bath"></i> 4 Baths</span></div>
+          <button class="btn" onclick="showHouse('h4')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Serviced</span>
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=400&q=80" alt="House 5">
+        </div>
+        <div class="card-content">
+          <h3>Serviced 2-Bedroom Flat</h3>
+          <div class="price">₦35,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 2 Beds</span><span><i class="fa-solid fa-bath"></i> 2 Baths</span></div>
+          <button class="btn" onclick="showHouse('h5')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Budget</span>
+          <img src="https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=400&q=80" alt="House 6">
+        </div>
+        <div class="card-content">
+          <h3>Self-Contain Studio</h3>
+          <div class="price">₦8,500,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 1 Bed</span><span><i class="fa-solid fa-bath"></i> 1 Bath</span></div>
+          <button class="btn" onclick="showHouse('h6')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Premium</span>
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80" alt="House 7">
+        </div>
+        <div class="card-content">
+          <h3>5-Bedroom Fully Detached</h3>
+          <div class="price">₦160,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 5 Beds</span><span><i class="fa-solid fa-bath"></i> 6 Baths</span></div>
+          <button class="btn" onclick="showHouse('h7')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Modern</span>
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80" alt="House 8">
+        </div>
+        <div class="card-content">
+          <h3>Terrace Duplex</h3>
+          <div class="price">₦75,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 4 Beds</span><span><i class="fa-solid fa-bath"></i> 4 Baths</span></div>
+          <button class="btn" onclick="showHouse('h8')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Smart Home</span>
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80" alt="House 9">
+        </div>
+        <div class="card-content">
+          <h3>Executive Smart Mansion</h3>
+          <div class="price">₦250,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 6 Beds</span><span><i class="fa-solid fa-bath"></i> 7 Baths</span></div>
+          <button class="btn" onclick="showHouse('h9')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Trending</span>
+          <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=400&q=80" alt="House 10">
+        </div>
+        <div class="card-content">
+          <h3>Semi-Detached 4-Bedroom</h3>
+          <div class="price">₦90,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 4 Beds</span><span><i class="fa-solid fa-bath"></i> 5 Baths</span></div>
+          <button class="btn" onclick="showHouse('h10')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Loft</span>
+          <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=400&q=80" alt="House 11">
+        </div>
+        <div class="card-content">
+          <h3>3-Bedroom Loft Apartment</h3>
+          <div class="price">₦55,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 3 Beds</span><span><i class="fa-solid fa-bath"></i> 3 Baths</span></div>
+          <button class="btn" onclick="showHouse('h11')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Cozy</span>
+          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80" alt="House 12">
+        </div>
+        <div class="card-content">
+          <h3>Cozy 1-Bedroom Apartment</h3>
+          <div class="price">₦22,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 1 Bed</span><span><i class="fa-solid fa-bath"></i> 1 Bath</span></div>
+          <button class="btn" onclick="showHouse('h12')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Elite</span>
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=400&q=80" alt="House 13">
+        </div>
+        <div class="card-content">
+          <h3>Waterfront Luxury Villa</h3>
+          <div class="price">₦380,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 5 Beds</span><span><i class="fa-solid fa-bath"></i> 6 Baths</span></div>
+          <button class="btn" onclick="showHouse('h13')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Classic</span>
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=400&q=80" alt="House 14">
+        </div>
+        <div class="card-content">
+          <h3>Classic 4-Bedroom Bungalow</h3>
+          <div class="price">₦50,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 4 Beds</span><span><i class="fa-solid fa-bath"></i> 3 Baths</span></div>
+          <button class="btn" onclick="showHouse('h14')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Modern</span>
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" alt="House 15">
+        </div>
+        <div class="card-content">
+          <h3>Contemporary 3-Bedroom Flat</h3>
+          <div class="price">₦42,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 3 Beds</span><span><i class="fa-solid fa-bath"></i> 3 Baths</span></div>
+          <button class="btn" onclick="showHouse('h15')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Duplex</span>
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&q=80" alt="House 16">
+        </div>
+        <div class="card-content">
+          <h3>Premium 2-Bedroom Maisonette</h3>
+          <div class="price">₦65,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 2 Beds</span><span><i class="fa-solid fa-bath"></i> 3 Baths</span></div>
+          <button class="btn" onclick="showHouse('h16')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Family</span>
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=400&q=80" alt="House 17">
+        </div>
+        <div class="card-content">
+          <h3>Suburban Family House</h3>
+          <div class="price">₦70,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 4 Beds</span><span><i class="fa-solid fa-bath"></i> 4 Baths</span></div>
+          <button class="btn" onclick="showHouse('h17')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Studio</span>
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=80" alt="House 18">
+        </div>
+        <div class="card-content">
+          <h3>Urban Studio Apartment</h3>
+          <div class="price">₦15,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 1 Bed</span><span><i class="fa-solid fa-bath"></i> 1 Bath</span></div>
+          <button class="btn" onclick="showHouse('h18')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Ultra Luxury</span>
+          <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=400&q=80" alt="House 19">
+        </div>
+        <div class="card-content">
+          <h3>Golf Course Estate Mansion</h3>
+          <div class="price">₦450,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 6 Beds</span><span><i class="fa-solid fa-bath"></i> 8 Baths</span></div>
+          <button class="btn" onclick="showHouse('h19')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Terrace</span>
+          <img src="https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?auto=format&fit=crop&w=400&q=80" alt="House 20">
+        </div>
+        <div class="card-content">
+          <h3>4-Bedroom Cornerpiece</h3>
+          <div class="price">₦95,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 4 Beds</span><span><i class="fa-solid fa-bath"></i> 5 Baths</span></div>
+          <button class="btn" onclick="showHouse('h20')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Eco Friendly</span>
+          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=400&q=80" alt="House 21">
+        </div>
+        <div class="card-content">
+          <h3>Eco-Friendly Smart Duplex</h3>
+          <div class="price">₦135,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 4 Beds</span><span><i class="fa-solid fa-bath"></i> 4 Baths</span></div>
+          <button class="btn" onclick="showHouse('h21')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Vintage</span>
+          <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=400&q=80" alt="House 22">
+        </div>
+        <div class="card-content">
+          <h3>Vintage 3-Bedroom Bungalow</h3>
+          <div class="price">₦38,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 3 Beds</span><span><i class="fa-solid fa-bath"></i> 2 Baths</span></div>
+          <button class="btn" onclick="showHouse('h22')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">High Demand</span>
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=400&q=80" alt="House 23">
+        </div>
+        <div class="card-content">
+          <h3>Executive 4-Bedroom Triplex</h3>
+          <div class="price">₦115,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 4 Beds</span><span><i class="fa-solid fa-bath"></i> 5 Baths</span></div>
+          <button class="btn" onclick="showHouse('h23')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrapper">
+          <span class="card-badge">Luxury</span>
+          <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80" alt="House 24">
+        </div>
+        <div class="card-content">
+          <h3>The Royal Onyx Estate</h3>
+          <div class="price">₦500,000,000</div>
+          <div class="card-meta"><span><i class="fa-solid fa-bed"></i> 7 Beds</span><span><i class="fa-solid fa-bath"></i> 9 Baths</span></div>
+          <button class="btn" onclick="showHouse('h24')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<div class="card">
-<h3>3-Bedroom Bungalow</h3>
-<p>₦45,000,000</p>
-<button class="btn" onclick="showHouse('h2')">View Details</button>
-</div>
-
-<div class="card">
-<h3>Mini Flat Apartment</h3>
-<p>₦18,000,000</p>
-<button class="btn" onclick="showHouse('h3')">View Details</button>
-</div>
-
-<div class="card">
-<h3>Luxury Penthouse</h3>
-<p>₦120,000,000</p>
-<button class="btn" onclick="showHouse('h4')">View Details</button>
-</div>
-
-</div>
-</div>
-
-</div>
-
-<!-- ================= HOUSE 1 ================= -->
-<div id="h1" class="hidden container">
-<h2>Modern 4-Bedroom Duplex</h2>
-<p><strong>Price:</strong> ₦85,000,000</p>
-
-<div class="gallery">
-<img id="img-h1" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" />
-
-<div class="gallery-controls">
-<button class="btn" onclick="prevImg('h1')">⬅ Prev</button>
-<button class="btn" onclick="nextImg('h1')">Next ➡</button>
-</div>
-</div>
-
-<p>Luxury duplex with modern finishing and gated security.</p>
-<button class="btn" onclick="showHome()">Back</button>
-</div>
-
-<!-- ================= HOUSE 2 ================= -->
-<div id="h2" class="hidden container">
-<h2>3-Bedroom Bungalow</h2>
-<p><strong>Price:</strong> ₦45,000,000</p>
-
-<div class="gallery">
-<img id="img-h2" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" />
-
-<div class="gallery-controls">
-<button class="btn" onclick="prevImg('h2')">⬅ Prev</button>
-<button class="btn" onclick="nextImg('h2')">Next ➡</button>
-</div>
-</div>
-
-<p>Comfortable family bungalow in secure estate.</p>
-<button class="btn" onclick="showHome()">Back</button>
-</div>
-
-<!-- ================= HOUSE 3 ================= -->
-<div id="h3" class="hidden container">
-<h2>Mini Flat Apartment</h2>
-<p><strong>Price:</strong> ₦18,000,000</p>
-
-<div class="gallery">
-<img id="img-h3" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688" />
-
-<div class="gallery-controls">
-<button class="btn" onclick="prevImg('h3')">⬅ Prev</button>
-<button class="btn" onclick="nextImg('h3')">Next ➡</button>
-</div>
-</div>
-
-<p>Affordable modern city apartment.</p>
-<button class="btn" onclick="showHome()">Back</button>
-</div>
-
-<!-- ================= HOUSE 4 ================= -->
-<div id="h4" class="hidden container">
-<h2>Luxury Penthouse</h2>
-<p><strong>Price:</strong> ₦120,000,000</p>
-
-<div class="gallery">
-<img id="img-h4" src="https://images.unsplash.com/photo-1501183638710-841dd1904471" />
-
-<div class="gallery-controls">
-<button class="btn" onclick="prevImg('h4')">⬅ Prev</button>
-<button class="btn" onclick="nextImg('h4')">Next ➡</button>
-</div>
-</div>
-
-<p>High-rise luxury apartment with city view.</p>
-<button class="btn" onclick="showHome()">Back</button>
-</div>
+<div id="property-details-container">
+  </div>
 
 <footer>
-<p>© 2026 FEMCO Real Estate Management</p>
+  <p>&copy; 2026 FEMCO Real Estate Management. All Rights Reserved.</p>
 </footer>
 
-
 <script>
-// IMAGE GALLERIES (multiple images per house)
+// ALL SEPARATE HIGH RESOLUTION IMAGES MAPPED EXCLUSIVELY PER HOUSE INDEX
 const images = {
-h1: [
-"https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
-"https://images.unsplash.com/photo-1564013799919-ab600027ffc6"
-],
-h2: [
-"https://images.unsplash.com/photo-1570129477492-45c003edd2be",
-"https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
-"https://images.unsplash.com/photo-1613977257363-707ba9348227"
-],
-h3: [
-"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
-"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
-"https://images.unsplash.com/photo-1493809842364-78817add7ffb"
-],
-h4: [
-"https://images.unsplash.com/photo-1501183638710-841dd1904471",
-"https://images.unsplash.com/photo-1484154218962-a197022b5858",
-"https://images.unsplash.com/photo-1494526585095-c41746248156"
-]
-
+  h1: [
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80"
+  ],
+  h2: [
+    "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80"
+  ],
+  h3: [
+    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80"
+  ],
+  h4: [
+    "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80"
+  ],
+  h5: [
+    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=800&q=80"
+  ],
+  h6: [
+    "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1502672016832-3f11204859ce?auto=format&fit=crop&w=800&q=80"
+  ],
+  h7: [
+    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+  ],
+  h8: [
+    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+  ],
+  h9: [
+    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80"
+  ],
+  h10: [
+    "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80"
+  ],
+  h11: [
+    "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80"
+  ],
+  h12: [
+    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+  ],
+  h13: [
+    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+  ],
+  h14: [
+    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80"
+  ],
+  h15: [
+    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+  ],
+  h16: [
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80"
+  ],
+  h17: [
+    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80"
+  ],
+  h18: [
+    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80"
+  ],
+  h19: [
+    "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?auto=format&fit=crop&w=800&q=80"
+  ],
+  h20: [
+    "https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
+  ],
+  h21: [
+    "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&q=80"
+  ],
+  h22: [
+    "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80"
+  ],
+  h23: [
+    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+  ],
+  h24: [
+    "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+  ]
 };
 
-const indexMap = {
-h1:0,h2:0,h3:0,h4:0
+const houseData = {
+  h1: { title: "Modern 4-Bedroom Duplex", price: "₦85,000,000", desc: "Luxury duplex with modern structural finishing, stamped concrete floors, and CCTV gated security protocols.", beds: 4, baths: 4 },
+  h2: { title: "3-Bedroom Bungalow", price: "₦45,000,000", desc: "Comfortable family bungalow inside a highly secure gated neighborhood with constant treated water supply.", beds: 3, baths: 3 },
+  h3: { title: "Mini Flat Apartment", price: "₦18,000,000", desc: "Affordable modern city apartment optimized for tech professionals with high potential rental ROI yields.", beds: 1, baths: 1 },
+  h4: { title: "Luxury Penthouse", price: "₦120,000,000", desc: "High-rise luxury masterpiece apartment offering panoramic city views and premium rooftop terrace access.", beds: 3, baths: 4 },
+  h5: { title: "Serviced 2-Bedroom Flat", price: "₦35,000,000", desc: "Fully serviced residential apartment with 24/7 alternative solar backup systems and armed security guards.", beds: 2, baths: 2 },
+  h6: { title: "Self-Contain Studio", price: "₦8,500,000", desc: "Compact studio configuration perfect for minimalists seeking structural accessibility near commercial centers.", beds: 1, baths: 1 },
+  h7: { title: "5-Bedroom Fully Detached", price: "₦160,000,000", desc: "Spacious luxury compound featuring a private Boys Quarter structure and automated entry gateways.", beds: 5, baths: 6 },
+  h8: { title: "Terrace Duplex", price: "₦75,000,000", desc: "Contemporary architectural design layout integrated inside a peaceful luxury neighborhood zone.", beds: 4, baths: 4 },
+  h9: { title: "Executive Smart Mansion", price: "₦250,000,000", desc: "Fully integrated smart home framework boasting voice-controlled ambient workflows and an infinity pool.", beds: 6, baths: 7 },
+  h10: { title: "Semi-Detached 4-Bedroom", price: "₦90,000,000", desc: "Generous layout design offering customizable kitchen islands and premium interior marble stylings.", beds: 4, baths: 5 },
+  h11: { title: "3-Bedroom Loft Apartment", price: "₦55,000,000", desc: "Industrial aesthetic loft design featuring massive windows for extensive natural ambient light illumination.", beds: 3, baths: 3 },
+  h12: { title: "Cozy 1-Bedroom Apartment", price: "₦22,000,000", desc: "Charming isolated flat unit layout emphasizing secure underground parking access points.", beds: 1, baths: 1 },
+  h13: { title: "Waterfront Luxury Villa", price: "₦380,000,000", desc: "Picturesque waterfront structure with specialized high-grade reinforced shoreline structural engineering.", beds: 5, baths: 6 },
+  h14: { title: "Classic 4-Bedroom Bungalow", price: "₦50,000,000", desc: "A timeless traditional family bungalow layout presenting massive backyard garden expansion zones.", beds: 4, baths: 3 },
+  h15: { title: "Contemporary 3-Bedroom Flat", price: "₦42,000,000", desc: "State of the art geometric design features featuring custom European styled cabinetry installations.", beds: 3, baths: 3 },
+  h16: { title: "Premium 2-Bedroom Maisonette", price: "₦65,000,000", desc: "Split-level luxury architecture designed deliberately for optimizing spatial airflow configurations.", beds: 2, baths: 3 },
+  h17: { title: "Suburban Family House", price: "₦70,000,000", desc: "Quiet low-traffic layout optimized perfectly for raising families near highly-rated elite institutions.", beds: 4, baths: 4 },
+  h18: { title: "Urban Studio Apartment", price: "₦15,000,000", desc: "Central downtown location presenting high asset appreciation values over minimal timelines.", beds: 1, baths: 1 },
+  h19: { title: "Golf Course Estate Mansion", price: "₦450,000,000", desc: "Ultra-high net worth asset overlooking championship fairways with bulletproof panic room modifications.", beds: 6, baths: 8 },
+  h20: { title: "4-Bedroom Cornerpiece", price: "₦95,000,000", desc: "Exclusive corner-lot configuration allowing duplicate entry access frameworks and extra land area.", beds: 4, baths: 5 },
+  h21: { title: "Eco-Friendly Smart Duplex", price: "₦135,000,000", desc: "Equipped with advanced zero-emission thermal regulation parameters and structural green systems.", beds: 4, baths: 4 },
+  h22: { title: "Vintage 3-Bedroom Bungalow", price: "₦38,000,000", desc: "Retro brick accents meeting modern internal transformations within clean communal perimeters.", beds: 3, baths: 2 },
+  h23: { title: "Executive 4-Bedroom Triplex", price: "₦115,000,000", desc: "Spanning three vertical floors with dedicated home cinema theater basements and private elevator shafts.", beds: 4, baths: 5 },
+  h24: { title: "The Royal Onyx Estate", price: "₦500,000,000", desc: "The peak of opulent architecture. Features custom imported Italian facades, 9-car showrooms, and security outposts.", beds: 7, baths: 9 }
 };
 
-function showHouse(id){
-document.getElementById('home').style.display='none';
-document.querySelectorAll('.container').forEach(c=>{
-if(c.id && c.id.startsWith('h')) c.style.display='none';
-});
-document.getElementById(id).style.display='block';
+const indexMap = {};
+
+// Build detail markup structurally clean inside runtime memory engine
+function initDetailsHTML() {
+  const container = document.getElementById('property-details-container');
+  let html = '';
+  
+  for (const [id, data] of Object.entries(houseData)) {
+    indexMap[id] = 0;
+    html += `
+      <div id="${id}" class="hidden container">
+        <button class="btn btn-secondary" style="width:auto; margin-bottom: 25px;" onclick="showHome()">
+          <i class="fa-solid fa-arrow-left"></i> Back to Properties
+        </button>
+        <div class="details-grid">
+          <div class="gallery">
+            <img id="img-${id}" src="${images[id][0]}" alt="${data.title}">
+            <div class="gallery-controls">
+              <button class="btn-circle" onclick="prevImg('${id}')"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="btn-circle" onclick="nextImg('${id}')"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="details-sidebar">
+            <h2>${data.title}</h2>
+            <div class="price-tag">${data.price}</div>
+            <p>${data.desc}</p>
+            <div class="specs-list">
+              <div class="specs-item"><i class="fa-solid fa-bed" style="color:var(--primary)"></i> <strong>Bedrooms:</strong> ${data.beds}</div>
+              <div class="specs-item"><i class="fa-solid fa-bath" style="color:var(--primary)"></i> <strong>Bathrooms:</strong> ${data.baths}</div>
+              <div class="specs-item"><i class="fa-solid fa-shield-halved" style="color:var(--primary)"></i> <strong>Security:</strong> Gated</div>
+              <div class="specs-item"><i class="fa-solid fa-bolt" style="color:var(--primary)"></i> <strong>Power:</strong> 24/7 Status</div>
+            </div>
+            <button class="btn" onclick="alert('Inquiry successfully logged for ${data.title}. A FEMCO agent will contact you shortly.')">
+              <i class="fa-solid fa-envelope"></i> Book Inspection Appointment
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  container.innerHTML = html;
 }
 
-function showHome(){
-document.getElementById('home').style.display='block';
-document.querySelectorAll('.container').forEach(c=>{
-if(c.id && c.id.startsWith('h')) c.style.display='none';
-});
+function showHouse(id) {
+  document.getElementById('home').style.display = 'none';
+  document.querySelectorAll('#property-details-container .container').forEach(c => c.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+  document.querySelector('nav ul a').classList.remove('active');
+  window.scrollTo(0, 0);
 }
 
-function updateImg(id){
-document.getElementById('img-'+id).src =
-images[id][indexMap[id]];
+function showHome() {
+  document.getElementById('home').style.display = 'block';
+  document.querySelectorAll('#property-details-container .container').forEach(c => c.style.display = 'none');
+  document.querySelector('nav ul a').classList.add('active');
+  window.scrollTo(0, 0);
 }
 
-function nextImg(id){
-indexMap[id] = (indexMap[id] + 1) % images[id].length;
-updateImg(id);
+function updateImg(id) {
+  document.getElementById('img-' + id).src = images[id][indexMap[id]];
 }
 
-function prevImg(id){
-indexMap[id] =
-(indexMap[id] - 1 + images[id].length) % images[id].length;
-updateImg(id);
+function nextImg(id) {
+  indexMap[id] = (indexMap[id] + 1) % images[id].length;
+  updateImg(id);
 }
+
+function prevImg(id) {
+  indexMap[id] = (indexMap[id] - 1 + images[id].length) % images[id].length;
+  updateImg(id);
+}
+
+// Instantiate view layer arrays seamlessly
+initDetailsHTML();
 </script>
 
 </body>
